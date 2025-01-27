@@ -32,7 +32,7 @@ namespace workshop.wwwapi.Data
 
             
             modelBuilder.Entity<Appointment>()
-                .HasKey(a => new {a.DoctorId, a.PatientId});
+                .HasKey(a => a.Id);
 
             //TODO: Seed Data Here
 
@@ -45,20 +45,23 @@ namespace workshop.wwwapi.Data
             // Assign relationships
             modelBuilder.Entity<Doctor>()
                 .HasMany(d => d.Appointments)
-                .WithOne()
+                .WithOne(a => a.Doctor)
                 .HasForeignKey(a => a.DoctorId);
 
             modelBuilder.Entity<Patient>()
                 .HasMany(p => p.Appointments)
-                .WithOne()
+                .WithOne(a => a.Patient)
                 .HasForeignKey(a => a.PatientId);
 
+            // Appointments relationships
             modelBuilder.Entity<Appointment>()
                 .HasOne(a => a.Doctor)
-                .WithMany(d => d.Appointments);
+                .WithMany(d => d.Appointments)
+                .HasForeignKey(d => d.DoctorId);
             modelBuilder.Entity<Appointment>()
                 .HasOne(a => a.Patient)
-                .WithMany(p => p.Appointments);
+                .WithMany(p => p.Appointments)
+                .HasForeignKey(p => p.PatientId);
             
 
         }

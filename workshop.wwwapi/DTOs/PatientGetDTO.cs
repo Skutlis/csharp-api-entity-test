@@ -16,9 +16,7 @@ public class PatientGetDTO
     {
         Id = p.Id;
         FullName = p.FullName;
-        p.Appointments.ForEach(a => Appointments.Add(new AppointmentGetPatient() {
-            Doctor = a.Doctor.FullName, Booking = a.Booking
-        }));
+        p.Appointments.ForEach(a => Appointments.Add(new AppointmentGetPatient(a)));
     }
 
 }

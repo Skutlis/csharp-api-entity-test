@@ -5,8 +5,8 @@ namespace workshop.wwwapi.DTOs;
 
 public class DoctorGetDTO
 {
-    public int Id;
-    public string FullName;
+    public int Id {get;set;}
+    public string FullName {get;set;}
     public List<AppointmentGetDoctor> Appointments {get;set;} = new List<AppointmentGetDoctor>();
 
     public DoctorGetDTO(Doctor d)

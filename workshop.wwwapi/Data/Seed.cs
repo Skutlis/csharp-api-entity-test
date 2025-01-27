@@ -81,7 +81,7 @@ public class Seed
             for (int i = 1; i < 11; i++)
             {
                 Doctor d = new Doctor();
-                d.FullName = _firstnames[i-1] + " " + _lastnames[i-1];
+                d.FullName = "Dr. " + _firstnames[i-1] + " " + _lastnames[i-1];
                 d.Id = i;
 
                 _doctors.Add(d);
@@ -99,6 +99,7 @@ public class Seed
                 a.DoctorId = j;
                 a.PatientId = j;
                 a.Booking = new DateTime(2025,1,1,10,0,0).ToUniversalTime();
+                a.Id = j;
                 
 
                 _appointments.Add(a);

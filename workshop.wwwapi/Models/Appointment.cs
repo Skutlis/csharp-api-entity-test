@@ -8,6 +8,7 @@ namespace workshop.wwwapi.Models
     public class Appointment
     {
       
+        public int Id {get;set;}
         public DateTime Booking { get; set; }
         
         public int DoctorId { get; set; }
