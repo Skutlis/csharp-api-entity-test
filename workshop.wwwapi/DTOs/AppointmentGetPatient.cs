@@ -9,6 +9,7 @@ public class AppointmentGetPatient
         
     public string Doctor { get; set; }
 
+    public AppointmentGetPatient() {}
     public AppointmentGetPatient(Appointment a)
     {
         Booking = a.Booking;

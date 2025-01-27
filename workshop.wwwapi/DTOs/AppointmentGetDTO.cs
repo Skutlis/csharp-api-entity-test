@@ -12,7 +12,7 @@ public class AppointmentGetDTO
     
     public string Patient { get; set; }
 
-  
+    public AppointmentGetDTO() {}
     public AppointmentGetDTO(Appointment a)
     {
         Booking = a.Booking;

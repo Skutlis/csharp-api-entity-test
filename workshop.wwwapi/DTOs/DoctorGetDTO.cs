@@ -9,6 +9,7 @@ public class DoctorGetDTO
     public string FullName {get;set;}
     public List<AppointmentGetDoctor> Appointments {get;set;} = new List<AppointmentGetDoctor>();
 
+    public DoctorGetDTO() {}
     public DoctorGetDTO(Doctor d)
     {
         Id = d.Id;

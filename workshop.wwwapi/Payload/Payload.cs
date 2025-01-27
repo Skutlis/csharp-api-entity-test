@@ -9,4 +9,6 @@ public class Payload<T>
     public bool GoodResponse {get;set;} = true;
     public string Message {get;set;} = "Success";
 
+    public Payload() {}
+
 }
